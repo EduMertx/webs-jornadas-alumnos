@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Alumnos - Proyectos Web</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 { color: var(--primary); }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        .card span {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Proyectos Finales: Mis Alumnos</h1>
+    <p>Selecciona un proyecto para ver el microsite</p>
+</header>
+
+<main class="grid">
+    <a href="alumno1/" class="card">
+        <span>🚀 Alumno 1</span>
+    </a>
+    <a href="alumno2/" class="card">
+        <span>🎨 Alumno 2</span>
+    </a>
+    <a href="alumno3/" class="card">
+        <span>💻 Alumno 3</span>
+    </a>
+    <a href="alumno4/" class="card">
+        <span>⚡ Alumno 4</span>
+    </a>
+    <a href="alumno5/" class="card">
+        <span>🌟 Alumno 5</span>
+    </a>
+    <a href="alumno6/" class="card">
+        <span>🔥 Alumno 6</span>
+    </a>
+    <a href="alumno7/" class="card">
+        <span>🌈 Alumno 7</span>
+    </a>
+    <a href="alumno8/" class="card">
+        <span>🛠️ Alumno 8</span>
+    </a>
+    <a href="alumno9/" class="card">
+        <span>📦 Alumno 9</span>
+    </a>
+    <a href="alumno10/" class="card">
+        <span>🧪 Alumno 10</span>
+    </a>
+</main>
+
+</body>
+</html>
