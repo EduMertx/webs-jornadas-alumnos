@@ -3,101 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Alumnos - Proyectos Web</title>
+    <title>Jornadas de Diseño - Proyectos Finales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #1e293b;
-        }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+        * {
             margin: 0;
-            padding: 2rem;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        :root {
+            --navy: #2d3e50;
+            --turquoise: #5ecfbe;
+            --coral: #e6826e;
+            --yellow: #f9d949;
+            --cream: #f5f5f0;
+        }
+        
+        body {
+            font-family: 'Akshar', sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+        
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            padding: 2rem 1rem;
         }
-        h1 { color: var(--primary); }
+        
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 span {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--turquoise), var(--coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--navy);
+            opacity: 0.7;
+            font-weight: 500;
+        }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
+        
         .card {
             background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            padding: 2.5rem;
+            border: 4px solid var(--navy);
+            box-shadow: 8px 8px 0 0 var(--navy);
+            transition: all 0.3s ease;
             text-decoration: none;
-            color: inherit;
+            color: var(--navy);
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid #e2e8f0;
+            justify-content: center;
+            min-height: 180px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            transition: height 0.3s ease;
+        }
+        
+        .card.turquoise::before { background: var(--turquoise); }
+        .card.coral::before { background: var(--coral); }
+        .card.yellow::before { background: var(--yellow); }
+        .card.navy::before { background: var(--navy); }
+        
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 0 var(--navy);
         }
-        .card img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 1rem;
+        
+        .card:hover::before {
+            height: 100%;
+            opacity: 0.1;
         }
-        .card span {
-            font-weight: bold;
-            font-size: 1.1rem;
+        
+        .card-number {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .card.turquoise .card-number { color: var(--turquoise); }
+        .card.coral .card-number { color: var(--coral); }
+        .card.yellow .card-number { color: var(--yellow); }
+        .card.navy .card-number { color: var(--navy); }
+        
+        .card-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            header {
+                margin-bottom: 2rem;
+            }
+            
+            .grid {
+                gap: 1.5rem;
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                padding: 2rem;
+                min-height: 150px;
+            }
+            
+            .card-number {
+                font-size: 2.5rem;
+            }
+            
+            .card-name {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>XIV JORNADAS DISEÑO EAT - Webs hechas desde 2º del Ciclo de G.S. de Gráfica Interactiva</h1>
-    <p>Selecciona un proyecto para ver el microsite</p>
+    <h1>Jornadas de Diseño<br><span>CREER · CREAR</span></h1>
+    <p class="subtitle">Proyectos Finales 2025-26</p>
 </header>
 
 <main class="grid">
-    <a href="alumno1/" class="card">
-        <span>🚀 Alejandra</span>
+    <a href="alumno1/" class="card turquoise">
+        <div class="card-number">01</div>
+        <div class="card-name">ALEJANDRA</div>
     </a>
-    <a href="alumno2/" class="card">
-        <span>🎨 Lucía</span>
+    <a href="alumno2/" class="card coral">
+        <div class="card-number">02</div>
+        <div class="card-name">LUCÍA</div>
     </a>
-    <a href="alumno3/" class="card">
-        <span>💻 María B</span>
+    <a href="alumno3/" class="card yellow">
+        <div class="card-number">03</div>
+        <div class="card-name">MARÍA B</div>
     </a>
-    <a href="alumno4/" class="card">
-        <span>⚡ Pablo</span>
+    <a href="alumno4/" class="card navy">
+        <div class="card-number">04</div>
+        <div class="card-name">PABLO</div>
     </a>
-    <a href="alumno5/" class="card">
-        <span>🌟 Rocío</span>
+    <a href="alumno5/" class="card turquoise">
+        <div class="card-number">05</div>
+        <div class="card-name">ROCÍO</div>
     </a>
-    <a href="alumno6/" class="card">
-        <span>🔥 Borja</span>
+    <a href="alumno6/" class="card coral">
+        <div class="card-number">06</div>
+        <div class="card-name">BORJA</div>
     </a>
-    <a href="alumno7/" class="card">
-        <span>🌈 Gabriela</span>
+    <a href="alumno7/" class="card yellow">
+        <div class="card-number">07</div>
+        <div class="card-name">GABRIELA</div>
     </a>
-    <a href="alumno8/" class="card">
-        <span>🛠️ Patricia</span>
+    <a href="alumno8/" class="card navy">
+        <div class="card-number">08</div>
+        <div class="card-name">PATRICIA</div>
     </a>
-    <a href="alumno9/" class="card">
-        <span>📦 Paula</span>
+    <a href="alumno9/" class="card turquoise">
+        <div class="card-number">09</div>
+        <div class="card-name">PAULA</div>
     </a>
-    <a href="alumno10/" class="card">
-        <span>🧪 Teresa</span>
+    <a href="alumno10/" class="card coral">
+        <div class="card-number">10</div>
+        <div class="card-name">TERESA</div>
     </a>
-    <a href="alumno11/" class="card">
-        <span>🏆 Inés</span>
+    <a href="alumno11/" class="card yellow">
+        <div class="card-number">11</div>
+        <div class="card-name">INÉS</div>
     </a>
 </main>
 
